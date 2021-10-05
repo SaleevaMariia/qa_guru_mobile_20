@@ -1,32 +1,26 @@
 package qaguru.config;
 
 import org.aeonbits.owner.Config;
+
 @Config.Sources({
-        "classpath:android.properties"
+        "classpath:${deviceHost}.properties"
 })
 public interface AndroidConfig extends Config {
+    @Key("platformName")
+    String getPlatformName();
 
-    @Key("user")
-    String getUser();
+    @Key("deviceName")
+    String getDeviceName();
 
-    @Key("password")
-    String getPassword();
+    @Key("version")
+    String getVersionName();
+
+    @Key("appPackage")
+    String getAppPackage();
+
+    @Key("appActivity")
+    String getAppActivity();
 
     @Key("app")
     String getApp();
-
-    @Key("device")
-    String getDevice();
-
-    @Key("os_version")
-    String getOsVersion();
-
-    @Key("project")
-    String getProject();
-
-    @Key("build")
-    String getBuild();
-
-    @Key("name")
-    String getName();
 }
